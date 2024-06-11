@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+/* INITIALS */
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.header-container{
+  height: 100vh;
+  width: 100vw;
+  background-color: #DCDCD3;
+  background-image: url(./img/Design\ sem\ nome.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 0 112px;
+  position: relative;
+}
+h1{
+  font-size:  50px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+h2{
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.social-media{
+  margin-top: 1rem;
+  display: flex;
+  
+}
+.social-media a {
+  margin-bottom: 80%;
+  text-decoration: none;
+  color: #1e1e2a;
+  padding: 1rem 4rem;
+  border: 1px solid #1e1e2a;
+  min-width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s ease-in-out;
+  
+}
+a:hover{
+  background-color: #fff;
+}
+
+.checkbox-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.checkbox {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  transition: 400ms ease-in-out 0s;
+}
+
+.checkbox .trace{
+  width: 50px;
+  height: 2px;
+  background-color: #1e1e2a;
+  position: absolute;
+  border-radius: 4px;
+  transition: 0.5s ease-in-out;
+}
+
+.checkbox .trace:nth-child(1){
+  top: 26px;
+  transform: rotate(0);
+}
+.checkbox .trace:nth-child(2){
+  top: 46px;
+  transform: rotate(0);
+}
+.checkbox .trace:nth-child(3){
+  top: 66px;
+  transform: rotate(0);
+}
+
+#toggle{
+  display: none;
+}
+
+.menu{
+  position: absolute;
+  top: 28px ;
+  right: 20px;
+  background-color: transparent;
+  height: 4px;
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 0px #fff;
+  z-index: -1;
+  transition: 400ms ease-in-out 0s;
+}
+.menu-itens{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: 400ms ease-in-out 0s;
+}
+.menu-itens ul{
+  list-style-type: none;
+
+}
+.menu-itens ul li a{
+  margin: 10px 0;
+  color: #1e1e2a;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 40px;
+}
+
+#toggle:checked + .checkbox .trace:nth-child(1){
+  transform: rotate(45deg);
+  top: 47px;
+}
+#toggle:checked + .checkbox .trace:nth-child(2){
+  transform: translate(-100px);
+  top: 30px;
+  visibility: hidden;
+  opacity: 0;
+}
+#toggle:checked + .checkbox .trace:nth-child(3){
+  transform: rotate(-45deg);
+  top: 48px;
+}
+#toggle:checked + .checkbox{
+  background-color: #fff;
+}
+
+#toggle:checked ~ .menu{
+  box-shadow: 0px 0px 0px 100vmax #fff;
+  z-index: 1;
+}
+#toggle:checked ~ .menu-itens{
+  visibility: visible;
+  opacity: 1;
+}
+
+.container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: column;
+  margin: 3rem 0;
+}
+
+.card-container{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+}
+
+.card{
+  position: relative;
+  z-index: 1;
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  margin: 3rem 0 0 0;
+  display: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #DCDCD3;
+  background-image: url(img/Design\ sem\ nome.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: grayscale(0.5);
+  color: #1e1e2a;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.card-text{
+  width: 40%;
+  letter-spacing: 1px;
+  color: rgb(109, 109, 109);
+}
+
+.card-wrapper{
+  padding: 30%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card-wrapper::before{
+  content: '';
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  display: block;
+  border: 1px solid #fff;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.card-wrapper h2{
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin: 0;
+  transition: 0.5 ease-in-out;
+}
+
+.card-wrapper p{
+  font-size: 0;
+  visibility: hidden;
+  opacity: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.5s ease-in-out;
+}
+
+.card:hover{
+  filter: unset;
+}
+.card> .card-wrapper::before{
+  height: 200px;
+  width: 200px;
+  opacity: 1;
+}
+
+.card:hover > .card-wrapper p {
+  opacity: 1;
+  visibility: visible;
+  font-size: 14px;
+}
+.footer {
+  width: 100%;
+  height: 100px;
+  background-color: #DCDCD3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e1e2a;
+
+}
+#body-sobre{
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+#body-sobre h2{
+  color: #004AAD;
+}
+
+.container-curriculo {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#header-sobre {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#header h1 {
+  margin: 0;
+}
+
+.sections{
+    margin-bottom: 20px;
+}
+
+.sections h2{
+  border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+}
+
+.sections ul {
+  margin-left: 10px;
+  padding: 0;
+}
+.sections ul li {
+  margin-bottom: 10px;
+}
+#link-projeto{
+  text-decoration: none;
+  font-size: 15px;
+  color: #000000;
+}
